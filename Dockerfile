@@ -1,10 +1,12 @@
+# Use the official Mosquitto image
 FROM eclipse-mosquitto:latest
 
-# Copy custom Mosquitto configuration (optional)
+# Copy the Mosquitto configuration file
 COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
-# Expose MQTT ports
-EXPOSE 10001 10002
+# Expose the WebSockets port (Render requires HTTP-based ports)
+EXPOSE 10000
 
-CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf", "-v"]
+# Start Mosquitto in verbose mode
+CMD ["mosquitto", "-c", "/mosquitto/config/mosquitto.conf", "-v"]
 
