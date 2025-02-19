@@ -4,7 +4,7 @@ FROM eclipse-mosquitto:latest
 COPY mosquitto.conf /mosquitto/config/mosquitto.conf
 
 # Expose MQTT ports
-EXPOSE 1883 8883 9001
+EXPOSE 10000
 
 CMD ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf", "-v"]
 
