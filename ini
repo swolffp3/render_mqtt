@@ -1,8 +1,8 @@
 # Secure MQTT with TLS
-# listener 8883
-# cafile /mosquitto/config/ca.crt
-# certfile /mosquitto/config/server.crt
-# keyfile /mosquitto/config/server.key
+listener 8883
+cafile /mosquitto/config/ca.crt
+certfile /mosquitto/config/server.crt
+keyfile /mosquitto/config/server.key
 
 # Enable password authentication
 password_file /mosquitto/config/passwd
